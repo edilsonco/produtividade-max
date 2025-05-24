@@ -327,3 +327,55 @@ blockquote {
 blockquote p {
     margin-bottom: 0;
 }
+
+@media (max-width: 375px) {
+    /* Target the sidebar when it's visible (i.e., does NOT have -translate-x-full) on small screens */
+    aside#sidebar:not(.-translate-x-full) {
+        width: 240px; /* Adjusting from w-72 (288px) to 240px */
+    }
+}
+
+@media (max-width: 639px) { /* Screens smaller than Tailwind's 'sm' breakpoint */
+    .card {
+        padding: 1.5rem; /* Reduce padding from 2rem 2.5rem (32px 40px) to 1.5rem (24px) */
+    }
+
+    .card-title {
+        font-size: 1.75rem; /* Original: 2rem */
+        padding-bottom: 0.6rem; /* Original: 0.75rem */
+        margin-bottom: 1rem; /* Original: 1.5rem */
+    }
+
+    .card-title ion-icon {
+        font-size: 2.25rem; /* Original: 2.8rem */
+        margin-right: 0.75rem; /* Original: 1rem */
+    }
+
+    .card h3 {
+        font-size: 1.25rem; /* Original: 1.375rem */
+        margin-top: 1.5rem; /* Original: 2rem */
+        margin-bottom: 0.75rem; /* Original: 1rem */
+    }
+
+    .card p, .card li {
+        font-size: 1rem; /* Original: 1.05rem, ensuring it's not too large */
+        line-height: 1.7; /* Original: 1.8, slight adjustment if needed */
+    }
+
+    .card li {
+        padding-left: 1.5rem; /* Original: 1.75rem, adjust if diamond feels too far */
+    }
+    .card li::before {
+        top: 0.25em; /* Original: 0.3em, fine-tune diamond alignment */
+        font-size: 0.75em; /* Slightly smaller diamond for smaller text */
+    }
+
+    /* Reduce padding for blockquotes and highlight boxes on small screens */
+    blockquote {
+        padding: 0.75rem 1rem; /* Original: 1rem 1.5rem */
+    }
+
+    .highlight-box {
+        padding: 1rem; /* Original: 1.25rem */
+    }
+}
